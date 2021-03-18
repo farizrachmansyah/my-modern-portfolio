@@ -1,0 +1,50 @@
+.header {
+  // Navbar Section
+  &__nav {
+    .logo {
+      font-family: $ff-secondary;
+      color: $primary-color;
+    }
+
+    .burger {
+      flex-direction: column;
+
+      &__line {
+        display: inline-block;
+        width: 24px;
+        height: 2px;
+        background-color: $dark-color;
+
+        &.firstline {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  // Hero Section
+  &__hero {
+    div {
+      max-width: 230px;
+
+      .stage {
+        position: relative;
+        margin-bottom: 1rem;
+        padding-left: 68px;
+        font-size: 1rem;
+        color: $light-color;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 52px;
+          height: 2px;
+          background-color: $light-color;
+        }
+      }
+    }
+  }
+}
