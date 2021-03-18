@@ -1,9 +1,29 @@
 .header {
+  height: 100vh;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 226px;
+    height: 370px;
+    background-color: $primary-color;
+    clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
+  }
   // Navbar Section
   &__nav {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
     .logo {
-      font-family: $ff-secondary;
-      color: $primary-color;
+      a {
+        font-family: $ff-secondary;
+        font-size: 1.5rem;
+        font-weight: weight(bold);
+        color: $primary-color;
+      }
     }
 
     .burger {
@@ -11,12 +31,12 @@
 
       &__line {
         display: inline-block;
-        width: 24px;
+        width: 20px;
         height: 2px;
         background-color: $dark-color;
 
         &.firstline {
-          margin-bottom: 5px;
+          margin-bottom: 4px;
         }
       }
     }
@@ -24,26 +44,24 @@
 
   // Hero Section
   &__hero {
+    position: relative;
+    z-index: 1;
+
     div {
       max-width: 230px;
 
-      .stage {
-        position: relative;
-        margin-bottom: 1rem;
-        padding-left: 68px;
-        font-size: 1rem;
-        color: $light-color;
+      .title {
+        color: $dark-color;
+        font-weight: weight(medium);
+        font-size: 2rem;
+        margin-top: 0.875rem;
+        margin-bottom: 2.5rem;
+      }
 
-        &::before {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          width: 52px;
-          height: 2px;
-          background-color: $light-color;
-        }
+      .scroll {
+        margin-left: 1.25rem;
+        font-size: 2rem;
+        color: $secondary-color;
       }
     }
   }

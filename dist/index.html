@@ -16,13 +16,16 @@
     />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
-      <nav class="header__nav container container--p flex flex-ai-c flex-jc-sb">
+      <nav class="header__nav container container--px flex flex-ai-c flex-jc-sb">
         <span class="logo">
-          <h1>fariz.r</h1>
+          <a href="/">fariz.r</a>
         </span>
         <div class="burger flex">
           <div class="burger__line firstline"></div>
@@ -34,10 +37,29 @@
         <div>
           <span class="stage">Fariz Rachmansyah</span>
           <h1 class="title">Hi there, my name's Fariz. I'm a Web Developer.</h1>
-          <span class="scroll">Let's go</span>
+          <span class="scroll">
+            <i class="fas fa-chevron-circle-down"></i>
+          </span>
         </div>
       </div>
     </header>
+
+    <!-- Main -->
+    <section class="introduce container container--p">
+      <div class="introduce__desc">
+        <span class="stage">who am i</span>
+        <h3 class="aboutme">
+          I'm an Informatics Engineering student at Gunadarma University. Also a Web Developer, specializing in front-end.
+        </h3>
+      </div>
+      <h2 class="introduce__tagline">
+        i'm doin' it. <br />
+        you're lovin' it
+      </h2>
+      <div class="introduce__btn">
+        <button class="btn">contact me <i class="fas fa-long-arrow-alt-right"></i></button>
+      </div>
+    </section>
     <script src="./js/main.js"></script>
   </body>
 </html>

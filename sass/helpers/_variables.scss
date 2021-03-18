@@ -1,9 +1,10 @@
 // Fonts
-$primary-color: #bb662a;
-$secondary-color: #0080bd;
-$dark-color: #272727;
-$light-color: #a69a91;
-$white-color: #ffffff;
+$primary-color: #537636;
+$primary-accent: #8bb865;
+$secondary-color: #543b23;
+$secondary-accent: #846954;
+$dark-color: #1d140c;
+$light-color: #dfdfd4;
 
 $ff-primary: "Poppins", sans-serif;
 $ff-secondary: "Bree Serif", serif;
@@ -12,5 +13,6 @@ $font-weight: (
   "thin": 100,
   "light": 300,
   "regular": 400,
+  "medium": 600,
   "bold": 700,
 );
