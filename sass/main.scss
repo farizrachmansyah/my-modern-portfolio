@@ -1,1 +1,6 @@
-@import "globals";
+// helpers
+@import "./helpers/variables";
+@import "./helpers/functional";
+@import "./helpers/globals";
+
+// element styles

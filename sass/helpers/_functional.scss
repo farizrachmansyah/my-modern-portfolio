@@ -1,0 +1,27 @@
+// Responsive Web
+$breakpoints-up: (
+  "tablet": "768px",
+  "smDesktop": "1024px",
+  "mdDesktop": "1280px",
+);
+$breakpoints-down: (
+  "phone": "480px",
+  "tablet": "767px",
+  "smDesktop": "1023px",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+// Font Weight
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}

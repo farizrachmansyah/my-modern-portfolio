@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-primary;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  // with padding
+  &--p {
+    padding: 2rem;
+  }
+  &--px {
+    padding: 0 2rem;
+  }
+  &--py {
+    padding: 2rem 0;
+  }
+}
+
+.flex {
+  display: flex;
+
+  // most flexbox property used
+  &-jc-c {
+    justify-content: center;
+  }
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// hidding elements
+.hide-for-mobile {
+  @include breakpoint-down(phone) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include breakpoint-up(smDesktop) {
+    display: none;
+  }
+}
