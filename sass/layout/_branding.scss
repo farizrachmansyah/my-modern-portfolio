@@ -1,0 +1,32 @@
+.branding {
+  flex-direction: column;
+  padding-top: 3rem;
+  background-color: $primary-color;
+
+  &__desc {
+    padding-bottom: 55px;
+    margin-bottom: 55px;
+
+    .stage {
+      color: #fff;
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+
+    .quote {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: weight(medium);
+    }
+  }
+
+  &__tagline {
+    margin-bottom: 48px;
+    color: #fff;
+    font-size: 2.5625rem;
+    text-transform: capitalize;
+  }
+}

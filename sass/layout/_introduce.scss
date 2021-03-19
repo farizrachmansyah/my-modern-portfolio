@@ -1,0 +1,27 @@
+.introduce {
+  &__text {
+    margin-bottom: 55px;
+
+    .title {
+      font-size: 32px;
+      font-weight: weight(semi-bold);
+      text-transform: capitalize;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .desc {
+      max-width: 270px;
+    }
+  }
+
+  &__btn {
+    .btn {
+      width: 100%;
+
+      i {
+        margin-left: 10px;
+      }
+    }
+  }
+}

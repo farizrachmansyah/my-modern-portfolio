@@ -14,10 +14,13 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -35,31 +38,41 @@
 
       <div class="header__hero container container--px">
         <div>
-          <span class="stage">Fariz Rachmansyah</span>
+          <span class="stage">fariz rachmansyah</span>
           <h1 class="title">Hi there, my name's Fariz. I'm a Web Developer.</h1>
           <span class="scroll">
-            <i class="fas fa-chevron-circle-down"></i>
+            <ion-icon name="chevron-down-sharp"></ion-icon>
           </span>
         </div>
       </div>
     </header>
 
-    <!-- Main -->
-    <section class="introduce container container--p">
-      <div class="introduce__desc">
+    <!-- Introduce Section -->
+    <div class="introduce">
+      <div class="introduce__text container container--p">
         <span class="stage">who am i</span>
-        <h3 class="aboutme">
-          I'm an Informatics Engineering student at Gunadarma University. Also a Web Developer, specializing in front-end.
-        </h3>
+        <h2 class="title">a self-taught web developer, specializing in front-end</h2>
+        <p class="desc">I'm an Informatics Engineering student at Gunadarma University.</p>
       </div>
-      <h2 class="introduce__tagline">
-        i'm doin' it. <br />
-        you're lovin' it
-      </h2>
-      <div class="introduce__btn">
+      <div class="introduce__btn container--p">
         <button class="btn">contact me <i class="fas fa-long-arrow-alt-right"></i></button>
       </div>
-    </section>
+    </div>
+
+    <!-- Branding Section -->
+    <div class="container container--py">
+      <section class="branding container--p flex">
+        <div class="branding__desc">
+          <span class="stage">what i do</span>
+          <h3 class="quote">I turn ideas into lines of code and bringing them to life in browser, and I love what I do.</h3>
+        </div>
+        <h2 class="branding__tagline">
+          i'm doin' it. <br />
+          you're lovin' it.
+        </h2>
+      </section>
+    </div>
+
     <script src="./js/main.js"></script>
   </body>
 </html>
