@@ -1,0 +1,26 @@
+.showcase {
+  background-color: $primary-color;
+  padding-top: 0;
+  padding-right: 0;
+  // overflow: hidden;
+
+  &__slider {
+    width: 100%;
+    // overflow: hidden;
+    transform: translateX(0);
+
+    .slide {
+      user-select: none;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      &__logo {
+        .fa-html5 {
+          color: #e34c26;
+        }
+      }
+    }
+  }
+}
