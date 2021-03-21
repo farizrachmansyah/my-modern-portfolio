@@ -29,12 +29,12 @@ class UI {
   doChange(counter) {
     const slides = this.slides;
 
-    // setting up the buttons
+    // plying with buttons
     if (counter < slides.length - 1) {
       this.nextBtn.style.color = 'inherit';
       this.nextBtn.style.pointerEvents = 'inherit';
     } else {
-      this.nextBtn.style.color = '#ccc';
+      this.nextBtn.style.color = '#bbb';
       this.nextBtn.style.pointerEvents = 'none';
     }
 
