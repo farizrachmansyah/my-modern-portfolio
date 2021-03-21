@@ -1,6 +1,5 @@
 .introduce {
   &__text {
-    padding-top: 3rem;
     margin-bottom: 55px;
 
     .title {
@@ -17,6 +16,8 @@
   }
 
   &__btn {
+    padding-bottom: 0;
+
     .btn {
       width: 100%;
 
