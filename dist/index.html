@@ -7,6 +7,13 @@
     <title>Fariz Rachmansyah &MediumSpace;|&MediumSpace; Web Developer</title>
     <link rel="stylesheet" href="./css/main.min.css" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -14,17 +21,13 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
+    <!-- Landing Page Section -->
     <header class="header">
       <nav class="header__nav container container--px flex flex-ai-c flex-jc-sb">
         <span class="logo">
@@ -61,7 +64,7 @@
 
     <!-- Branding Section -->
     <div id="branding-wrapper" class="container container--py">
-      <section class="branding container--p flex">
+      <section class="branding container--px flex">
         <div class="branding__circles"></div>
         <div class="branding__desc">
           <span class="stage">what i do</span>
@@ -75,39 +78,52 @@
     </div>
 
     <!-- Showcase Section -->
-    <div class="showcase container container--p">
-      <div class="showcase__slider flex">
-        <div class="slide">
-          <span class="slide__logo">
-            <i class="fab fa-html5 fa-10x"></i>
-          </span>
-        </div>
-        <div class="slide">
-          <span class="slide__logo">
-            <i class="fab fa-css3-alt fa-10x"></i>
-          </span>
-        </div>
-        <div class="slide">
-          <span class="slide__logo">
-            <i class="fab fa-js fa-10x"></i>
-          </span>
-        </div>
-        <div class="slide">
-          <span class="slide__logo">
-            <i class="fab fa-sass fa-10x"></i>
-          </span>
-        </div>
-        <div class="slide">
-          <span class="slide__logo">
-            <i class="fab fa-git-alt fa-10x"></i>
-          </span>
-        </div>
-        <div class="slide">
-          <span class="slide__logo">
-            <i class="fas fa-database fa-10x"></i>
-          </span>
-        </div>
+    <div class="showcase container flex flex-jc-c">
+      <div class="showcase__slide">
+        <i class="fab fa-html5"></i>
+        <h5 class="slide__title">HTML</h5>
+        <p class="slide__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vero.</p>
       </div>
+      <div class="showcase__slide">
+        <i class="fab fa-css3-alt"></i>
+        <h5 class="slide__title">CSS</h5>
+        <p class="slide__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vero.</p>
+      </div>
+      <div class="showcase__slide">
+        <i class="fab fa-js"></i>
+        <h5 class="slide__title">Vanilla JS</h5>
+        <p class="slide__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vero.</p>
+      </div>
+      <div class="showcase__slide">
+        <i class="fab fa-sass"></i>
+        <h5 class="slide__title">SASS</h5>
+        <p class="slide__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vero.</p>
+      </div>
+      <div class="showcase__slide">
+        <i class="fab fa-git-alt"></i>
+        <h5 class="slide__title">Git</h5>
+        <p class="slide__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vero.</p>
+      </div>
+      <div class="showcase__slide">
+        <i class="fas fa-database"></i>
+        <h5 class="slide__title">SQL</h5>
+        <p class="slide__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vero.</p>
+      </div>
+    </div>
+    <div class="showcaseBtn">
+      <div class="showcaseBtn__wrapper container container--p">
+        <button type="button" class="prevBtn"><ion-icon name="arrow-back-sharp"></ion-icon></button>
+        <button type="button" class="nextBtn"><ion-icon name="arrow-forward-sharp"></ion-icon></button>
+      </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="portfolio container container--p">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident enim velit natus perspiciatis? Commodi, tenetur earum corrupti
+        cupiditate ab dignissimos officiis at mollitia nostrum facilis repellendus nihil nulla ex dolores nam recusandae, esse, non
+        molestiae repellat aliquam ullam dolor odit.
+      </p>
     </div>
 
     <script src="./js/main.js"></script>

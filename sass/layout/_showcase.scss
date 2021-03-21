@@ -1,26 +1,77 @@
 .showcase {
+  border: 1px solid gray;
+  position: relative;
+  height: 270px;
   background-color: $primary-color;
-  padding-top: 0;
-  padding-right: 0;
-  // overflow: hidden;
+  overflow: hidden;
 
-  &__slider {
+  &__slide {
+    border: 1px solid gray;
+    position: absolute;
     width: 100%;
-    // overflow: hidden;
+    height: 100%;
     transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primary-color;
+    color: $white-color;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
 
-    .slide {
-      user-select: none;
+    i {
+      font-size: 8rem;
+      margin-bottom: 1.25rem;
+    }
 
-      &:not(:last-child) {
-        margin-right: 2rem;
-      }
+    h5 {
+      font-size: 1.25rem;
+      font-weight: weight(bold);
+      margin-bottom: 0.5rem;
+    }
 
-      &__logo {
-        .fa-html5 {
-          color: #e34c26;
-        }
-      }
+    p {
+      text-align: center;
+      color: $light-color;
+    }
+
+    &:nth-child(1) {
+      left: 0;
+    }
+    &:nth-child(2) {
+      left: 100%;
+    }
+    &:nth-child(3) {
+      left: 200%;
+    }
+    &:nth-child(4) {
+      left: 300%;
+    }
+    &:nth-child(5) {
+      left: 400%;
+    }
+    &:nth-child(6) {
+      left: 500%;
+    }
+  }
+}
+
+.showcaseBtn {
+  background-color: $primary-color;
+
+  &__wrapper {
+    text-align: center;
+
+    .prevBtn,
+    .nextBtn {
+      border: none;
+      background: none;
+      color: $white-color;
+      font-size: 1.25rem;
+    }
+
+    .prevBtn {
+      margin-right: 1.25rem;
     }
   }
 }
