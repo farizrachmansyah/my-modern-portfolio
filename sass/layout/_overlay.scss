@@ -10,6 +10,7 @@
   transition: all 0.3s ease-in-out;
 
   &__navbar {
+    position: relative;
     margin-left: 2rem;
     overflow: hidden;
 
@@ -36,5 +37,13 @@
         }
       }
     }
+  }
+
+  &__shape {
+    position: absolute;
+    right: 25px;
+    bottom: 125px;
+    width: 170px;
+    height: 170px;
   }
 }
