@@ -27,13 +27,15 @@
     <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
   </head>
   <body>
+    <!-- Navbar Menu Overlay -->
+
     <!-- Landing Page Section -->
     <header class="header">
       <nav class="header__nav container container--px flex flex-ai-c flex-jc-sb">
         <span class="logo">
           <a href="/">fariz.r</a>
         </span>
-        <div class="burger flex">
+        <div class="burger flex hide-for-desktop">
           <div class="burger__line firstline"></div>
           <div class="burger__line secondline"></div>
         </div>
@@ -51,7 +53,7 @@
     </header>
 
     <!-- Introduction Section -->
-    <div class="introduce">
+    <div id="introduction" class="introduce">
       <div class="introduce__text container container--p">
         <span class="stage">who am i</span>
         <h2 class="title">a self-taught web developer, specializing in front-end</h2>
@@ -64,7 +66,7 @@
 
     <!-- Branding Section -->
     <div id="branding-wrapper" class="container container--py">
-      <section class="branding container--px flex">
+      <section id="branding" class="branding container--px flex">
         <div class="branding__circles"></div>
         <div class="branding__desc">
           <span class="stage">what i do</span>
@@ -129,7 +131,7 @@
     </div>
 
     <!-- Portfolio Section -->
-    <div class="portfolio container container--p">
+    <div id="portfolio" class="portfolio container container--p">
       <div class="portfolio__wrapper">
         <span class="stage">My Creation</span>
         <h2 class="title">It's not much and it is not too disappointing either, but hey come and take a &#128064;!</h2>
@@ -161,7 +163,7 @@
     </div>
 
     <!-- Contact Section -->
-    <div class="contact container container--p">
+    <div id="contact" class="contact container container--p">
       <div class="contact__wrapper">
         <span class="stage">get in touch</span>
         <h2 class="title">It would be an honor to work with you &#128521;</h2>
@@ -198,6 +200,23 @@
         </div>
       </div>
     </div>
+
+    <footer id="footer-wrapper" class="container container--py">
+      <section class="footer container container--px">
+        <div class="footer__circles"></div>
+        <div class="footer__quotes">
+          <h1 class="mark">&#8221;</h1>
+          <h1 class="text">There's no such thing as failure, just lessons to be learnt on the way.</h1>
+        </div>
+        <div class="footer__nav container--py">
+          <a href="index.html#introduction">About Me</a>
+          <a href="index.html#branding">Skills</a>
+          <a href="index.html#portfolio">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer__copyright">made with &hearts; from Indonesia</div>
+      </section>
+    </footer>
 
     <script src="./js/main.js"></script>
   </body>
