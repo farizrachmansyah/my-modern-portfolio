@@ -1,0 +1,40 @@
+.overlay {
+  position: absolute;
+  top: 113px;
+  right: 0;
+  z-index: 2;
+  width: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $white-color;
+  transition: all 0.3s ease-in-out;
+
+  &__navbar {
+    margin-left: 2rem;
+    overflow: hidden;
+
+    &-menu {
+      flex-direction: column;
+
+      a {
+        font-family: $ff-secondary;
+        font-size: 1.875rem;
+        color: $dark-color;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-social {
+      font-size: 1.875rem;
+      margin-top: 1rem;
+
+      a {
+        color: $primary-color;
+
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

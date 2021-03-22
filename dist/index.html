@@ -28,6 +28,21 @@
   </head>
   <body>
     <!-- Navbar Menu Overlay -->
+    <div class="overlay">
+      <div class="overlay__navbar">
+        <div class="overlay__navbar-menu flex flex-jc-sb">
+          <a href="index.html#introduction" class="menu" onclick="closeNav()">About</a>
+          <a href="index.html#branding" class="menu" onclick="closeNav()">Skills</a>
+          <a href="index.html#portfolio" class="menu" onclick="closeNav()">Projects</a>
+          <a href="index.html#contact" class="menu" onclick="closeNav()">Contact</a>
+        </div>
+        <div class="overlay__navbar-social">
+          <a href="https://github.com/farizrachmansyah" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="https://linkedin.com/in/farizrachmansyah" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="https://instagram.com/farizrachmansyah" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        </div>
+      </div>
+    </div>
 
     <!-- Landing Page Section -->
     <header class="header">
@@ -60,7 +75,7 @@
         <p class="desc">I'm an Informatics Engineering student at Gunadarma University.</p>
       </div>
       <div class="introduce__btn container--p">
-        <button class="btn">contact me <i class="fas fa-long-arrow-alt-right"></i></button>
+        <a href="index.html#contact" class="btn flex flex-ai-c flex-jc-c">contact me <i class="fas fa-long-arrow-alt-right"></i></a>
       </div>
     </div>
 
@@ -125,8 +140,8 @@
     </div>
     <div class="showcaseBtn">
       <div class="showcaseBtn__wrapper container container--px">
-        <button type="button" class="prevBtn"><ion-icon class="prev" name="arrow-back-sharp"></ion-icon></button>
-        <button type="button" class="nextBtn"><ion-icon class="next" name="arrow-forward-sharp"></ion-icon></button>
+        <button type="button" class="prevBtn"><span class="prev">&larr;</span></button>
+        <button type="button" class="nextBtn"><span class="next">&rarr;</span></button>
       </div>
     </div>
 

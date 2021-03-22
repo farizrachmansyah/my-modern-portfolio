@@ -17,6 +17,15 @@
     padding-top: 2rem;
     padding-bottom: 3rem;
 
+    &.open {
+      .firstline {
+        transform: rotate(45deg);
+      }
+      .secondline {
+        transform: rotate(-45deg);
+      }
+    }
+
     .logo {
       a {
         font-family: $ff-secondary;
@@ -34,6 +43,8 @@
         width: 20px;
         height: 2px;
         background-color: $dark-color;
+        transform-origin: 6px 1px;
+        transition: all 0.3s ease-in-out;
 
         &.firstline {
           margin-bottom: 4px;
@@ -58,10 +69,27 @@
       }
 
       .scroll {
+        position: relative;
         margin-left: 1.25rem;
         font-size: 2rem;
         color: $primary-color;
+
+        ion-icon {
+          position: absolute;
+          transform: translateY(0);
+          animation: arrowDropdown 1s infinite;
+        }
       }
     }
+  }
+}
+
+// animation
+@keyframes arrowDropdown {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(50%);
   }
 }
