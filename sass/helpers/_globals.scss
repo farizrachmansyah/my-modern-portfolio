@@ -42,12 +42,24 @@ a {
   // with padding
   &--p {
     padding: 2rem;
+
+    @include breakpoint-up(tablet) {
+      padding: 3rem;
+    }
   }
   &--px {
     padding: 0 2rem;
+
+    @include breakpoint-up(tablet) {
+      padding: 0 3rem;
+    }
   }
   &--py {
     padding: 2rem 0;
+
+    @include breakpoint-up(tablet) {
+      padding: 3rem 0;
+    }
   }
 }
 

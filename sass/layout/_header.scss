@@ -2,6 +2,10 @@
   height: 100vh;
   position: relative;
 
+  @include breakpoint-up(tablet) {
+    height: auto;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -24,6 +28,11 @@
       width: 270px;
       height: 470px;
     }
+    @include breakpoint-up(tablet) {
+      clip-path: none;
+      width: 270px;
+      height: 100%;
+    }
   }
   // Navbar Section
   &__nav {
@@ -40,6 +49,7 @@
     }
 
     .logo {
+      margin-right: 40px;
       a {
         font-family: $ff-secondary;
         font-size: 1.5rem;
@@ -48,8 +58,26 @@
       }
     }
 
+    .social {
+      margin-right: auto;
+
+      &__link {
+        margin-right: 40px;
+        color: $secondary-accent;
+
+        ion-icon {
+          margin-right: 12px;
+        }
+      }
+    }
+
     .burger {
       flex-direction: column;
+
+      @include breakpoint-up(tablet) {
+        position: relative;
+        z-index: 2;
+      }
 
       &__line {
         display: inline-block;
@@ -59,8 +87,17 @@
         transform-origin: 6px 1px;
         transition: all 0.3s ease-in-out;
 
+        @include breakpoint-up(tablet) {
+          width: 24px;
+          background-color: $white-color;
+        }
+
         &.firstline {
           margin-bottom: 4px;
+
+          @include breakpoint-up(tablet) {
+            margin-bottom: 5px;
+          }
         }
       }
     }
@@ -71,11 +108,19 @@
     position: relative;
     z-index: 1;
 
+    @include breakpoint-up(tablet) {
+      margin-top: 54px;
+      padding-bottom: 54px;
+    }
+
     div {
       max-width: 230px;
 
       @include breakpoint-up(lgPhone) {
         max-width: 270px;
+      }
+      @include breakpoint-up(tablet) {
+        max-width: 380px;
       }
 
       .title {
@@ -87,6 +132,10 @@
         @include breakpoint-up(lgPhone) {
           font-size: 2.5rem;
         }
+        @include breakpoint-up(tablet) {
+          font-size: 3.5rem;
+          margin-bottom: 7.125rem;
+        }
       }
 
       .scroll {
@@ -94,6 +143,11 @@
         margin-left: 1.25rem;
         font-size: 2rem;
         color: $primary-color;
+
+        @include breakpoint-up(tablet) {
+          margin-left: 2.5rem;
+          font-size: 2.25rem;
+        }
 
         ion-icon {
           position: absolute;
