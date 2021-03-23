@@ -6,11 +6,13 @@
     }
 
     .getintouch {
-      font-size: 0.85rem;
-
       &__contact {
         display: grid;
         grid-template-columns: 0.2fr 1.5fr;
+
+        @include breakpoint-up(smPhone) {
+          grid-template-columns: 0.2fr 2fr;
+        }
 
         &:not(:last-child) {
           margin-bottom: 1rem;
@@ -20,12 +22,21 @@
         &-text {
           color: $dark-color;
           font-weight: weight(semi-bold);
+          font-size: 0.85rem;
+
+          @include breakpoint-up(smPhone) {
+            font-size: 1rem;
+          }
         }
       }
     }
 
     .stayconnected {
       padding-top: 40px;
+
+      &__title {
+        font-size: 1.25rem;
+      }
 
       &__account {
         display: grid;
@@ -35,12 +46,23 @@
         align-items: center;
         margin-top: 2rem;
 
+        @include breakpoint-up(smPhone) {
+          grid-gap: 0.625rem;
+        }
+
         .account {
           padding: 0.875rem;
           font-size: 0.875rem;
           background-color: $light-color;
           color: $secondary-accent;
           text-align: center;
+
+          @include breakpoint-up(smPhone) {
+            padding: 1rem;
+          }
+          @include breakpoint-up(lgPhone) {
+            padding: 1.125rem;
+          }
 
           &__icon {
             margin-right: 0.3125rem;

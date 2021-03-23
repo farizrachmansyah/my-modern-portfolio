@@ -42,12 +42,20 @@
   h1 {
     color: $white-color;
     font-size: 2rem;
+
+    @include breakpoint-up(mdPhone) {
+      font-size: 2.5rem;
+    }
   }
 
   &__nav {
     a {
       display: block;
       color: $white-color;
+
+      @include breakpoint-up(mdPhone) {
+        font-size: 1.25rem;
+      }
 
       &:not(:last-child) {
         margin-bottom: 1rem;

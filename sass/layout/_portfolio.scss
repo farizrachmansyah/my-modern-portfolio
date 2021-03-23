@@ -3,6 +3,10 @@
     .title {
       margin-top: 1rem;
       margin-bottom: 2rem;
+
+      @include breakpoint-up(lgPhone) {
+        font-size: 1.875rem;
+      }
     }
 
     .items {
@@ -15,8 +19,23 @@
         background-color: $primary-accent;
         padding: 1rem;
 
+        @include breakpoint-up(lgPhone) {
+          padding: 1.25rem;
+        }
+
         &-title {
           margin-bottom: 0.625rem;
+
+          @include breakpoint-up(lgPhone) {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+          }
+        }
+
+        &-desc {
+          @include breakpoint-up(lgPhone) {
+            font-size: 1.125rem;
+          }
         }
       }
     }

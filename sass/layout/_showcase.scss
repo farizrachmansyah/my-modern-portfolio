@@ -4,6 +4,10 @@
   background-color: $primary-color;
   overflow: hidden;
 
+  @include breakpoint-up(smPhone) {
+    height: 47vh;
+  }
+
   &__slide {
     position: absolute;
     width: 100%;
@@ -26,11 +30,19 @@
       font-size: 1.25rem;
       font-weight: weight(bold);
       margin-bottom: 0.5rem;
+
+      @include breakpoint-up(lgPhone) {
+        font-size: 1.5rem;
+      }
     }
 
     p {
       text-align: center;
       color: $light-color;
+
+      @include breakpoint-up(lgPhone) {
+        font-size: 1.25rem;
+      }
     }
   }
 }
@@ -42,6 +54,10 @@
     padding-bottom: 55px;
     text-align: center;
 
+    @include breakpoint-up(mdPhone) {
+      padding-bottom: 75px;
+    }
+
     .prevBtn,
     .nextBtn {
       border: none;
@@ -49,6 +65,10 @@
       outline: none;
       color: $white-color;
       font-size: 1.25rem;
+
+      @include breakpoint-up(mdPhone) {
+        font-size: 1.5rem;
+      }
     }
 
     .prevBtn {

@@ -9,6 +9,10 @@
   background-color: $primary-color;
   position: relative;
 
+  @include breakpoint-up(mdPhone) {
+    padding-bottom: 75px;
+  }
+
   &__circles {
     position: absolute;
     top: 0;
@@ -60,6 +64,10 @@
       color: $white-color;
       font-size: 1.25rem;
       font-weight: weight(medium);
+
+      @include breakpoint-up(lgPhone) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -67,5 +75,15 @@
     color: $white-color;
     font-size: 2.5625rem;
     text-transform: capitalize;
+
+    @include breakpoint-up(smPhone) {
+      font-size: 2.875rem;
+    }
+    @include breakpoint-up(mdPhone) {
+      font-size: 3.25rem;
+    }
+    @include breakpoint-up(lgPhone) {
+      font-size: 3.75rem;
+    }
   }
 }
