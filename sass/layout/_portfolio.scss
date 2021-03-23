@@ -40,12 +40,18 @@
       &__work {
         background-color: $primary-accent;
         padding: 1rem;
+        transition: all 0.3s ease-in-out;
 
         @include breakpoint-up(lgPhone) {
           padding: 1.25rem;
         }
         @include breakpoint-up(smDesktop) {
           padding: 1.5rem;
+        }
+
+        &:hover {
+          text-decoration: none;
+          transform: translateY(-10px);
         }
 
         &-title {
