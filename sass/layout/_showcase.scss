@@ -7,6 +7,9 @@
   @include breakpoint-up(smPhone) {
     height: 47vh;
   }
+  @include breakpoint-up(tablet) {
+    height: 30vh;
+  }
 
   &__slide {
     position: absolute;
@@ -20,9 +23,18 @@
     transition: all 0.3s ease-in-out;
     user-select: none;
 
+    @include breakpoint-up(tablet) {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+
     i {
       font-size: 8rem;
       margin-bottom: 1.25rem;
+
+      @include breakpoint-up(tablet) {
+        font-size: 9rem;
+      }
     }
 
     h5 {

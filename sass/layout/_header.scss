@@ -42,19 +42,30 @@
     &.open {
       .firstline {
         transform: rotate(45deg);
+        background-color: $dark-color;
       }
       .secondline {
         transform: rotate(-45deg);
+        background-color: $dark-color;
       }
     }
 
     .logo {
-      margin-right: 40px;
+      margin-right: 55px;
+
+      @include breakpoint-up(tablet) {
+        position: relative;
+        z-index: 3;
+      }
       a {
         font-family: $ff-secondary;
         font-size: 1.5rem;
         font-weight: weight(bold);
         color: $dark-color;
+
+        @include breakpoint-up(tablet) {
+          font-size: 2rem;
+        }
       }
     }
 
@@ -62,11 +73,11 @@
       margin-right: auto;
 
       &__link {
-        margin-right: 40px;
+        margin-right: 48px;
         color: $secondary-accent;
 
         ion-icon {
-          margin-right: 12px;
+          margin-right: 10px;
         }
       }
     }
@@ -76,7 +87,7 @@
 
       @include breakpoint-up(tablet) {
         position: relative;
-        z-index: 2;
+        z-index: 3;
       }
 
       &__line {
@@ -89,7 +100,9 @@
 
         @include breakpoint-up(tablet) {
           width: 24px;
+          height: 2px;
           background-color: $white-color;
+          transform-origin: 7px 1px;
         }
 
         &.firstline {

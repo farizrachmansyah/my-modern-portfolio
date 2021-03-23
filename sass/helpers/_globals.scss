@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 
   &.noscroll {
-    overflow: hidden;
+    overflow-y: hidden;
   }
 }
 
@@ -88,6 +88,10 @@ a {
   font-size: 1rem;
   font-weight: weight(medium);
   text-transform: capitalize;
+
+  @include breakpoint-up(tablet) {
+    width: 50%;
+  }
 }
 
 .stage {

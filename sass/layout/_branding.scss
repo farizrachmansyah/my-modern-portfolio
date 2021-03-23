@@ -1,5 +1,9 @@
 #branding-wrapper {
   padding-bottom: 0;
+
+  @include breakpoint-up(tablet) {
+    padding: 0;
+  }
 }
 
 .branding {
@@ -11,6 +15,9 @@
 
   @include breakpoint-up(mdPhone) {
     padding-bottom: 75px;
+  }
+  @include breakpoint-up(tablet) {
+    padding-top: 75px;
   }
 
   &__circles {
@@ -32,6 +39,11 @@
       height: 368px;
       border: 1px solid rgba(223, 223, 212, 0.2);
       border-radius: 50%;
+
+      @include breakpoint-up(tablet) {
+        width: 568px;
+        height: 568px;
+      }
     }
 
     &::after {
@@ -44,6 +56,12 @@
       height: 600px;
       border: 1px solid rgba(223, 223, 212, 0.2);
       border-radius: 50%;
+
+      @include breakpoint-up(tablet) {
+        width: 1000px;
+        height: 1000px;
+        top: -85px;
+      }
     }
   }
 
