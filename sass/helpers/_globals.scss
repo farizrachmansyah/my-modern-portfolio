@@ -102,6 +102,17 @@ a {
   }
 }
 
+// animation
+.put-animation {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease-in-out;
+}
+.show-animation {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 // hidding elements
 .hide-for-mobile {
   @include breakpoint-down(phone) {

@@ -58,6 +58,18 @@ class UI {
       slide.style.transform = `translateX(-${counter * 100}%)`
     });
   }
+
+  scrollAppear() {
+    let animatedScrollAppear = document.querySelectorAll('.put-animation');
+    animatedScrollAppear.forEach(element => {
+      let thePosition = element.getBoundingClientRect().top;
+      let screenPosition = window.innerHeight / 1.5;
+
+      if (thePosition < screenPosition) {
+        element.classList.add('show-animation');
+      }
+    })
+  }
 }
 
 function eventListener() {
@@ -89,6 +101,11 @@ function eventListener() {
   nextBtn.addEventListener('click', function (e) {
     ui.changeShowcaseSlide(e);
   });
+
+  // scroll events
+  window.addEventListener('scroll', function () {
+    ui.scrollAppear();
+  })
 }
 
 function smoothScroll(target, duration) {
