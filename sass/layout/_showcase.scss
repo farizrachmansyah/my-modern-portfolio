@@ -10,6 +10,15 @@
   @include breakpoint-up(tablet) {
     height: 30vh;
   }
+  @include breakpoint-up(smDesktop) {
+    height: 42vh;
+  }
+  @include breakpoint-up(mdDesktop) {
+    height: 70vh;
+  }
+  @include breakpoint-up(lgDesktop) {
+    height: 40vh;
+  }
 
   &__slide {
     position: absolute;
@@ -27,6 +36,20 @@
       padding-left: 6rem;
       padding-right: 6rem;
     }
+    @include breakpoint-up(smDesktop) {
+      padding-left: 10rem;
+      padding-right: 10rem;
+    }
+    @include breakpoint-up(mdDesktop) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: calc((100vw - 1170px) / 2);
+      padding-right: calc((100vw - 1170px) / 2);
+    }
+
+    .slide__icon {
+      text-align: center;
+    }
 
     i {
       font-size: 8rem;
@@ -35,6 +58,9 @@
       @include breakpoint-up(tablet) {
         font-size: 9rem;
       }
+      @include breakpoint-up(smDesktop) {
+        font-size: 16rem;
+      }
     }
 
     h5 {
@@ -42,9 +68,13 @@
       font-size: 1.25rem;
       font-weight: weight(bold);
       margin-bottom: 0.5rem;
+      text-align: center;
 
       @include breakpoint-up(lgPhone) {
         font-size: 1.5rem;
+      }
+      @include breakpoint-up(smDesktop) {
+        font-size: 3rem;
       }
     }
 
@@ -54,6 +84,13 @@
 
       @include breakpoint-up(lgPhone) {
         font-size: 1.25rem;
+      }
+      @include breakpoint-up(smDesktop) {
+        font-size: 2rem;
+      }
+      @include breakpoint-up(smDesktop) {
+        text-align: left;
+        width: 65%;
       }
     }
   }
@@ -69,6 +106,12 @@
     @include breakpoint-up(mdPhone) {
       padding-bottom: 75px;
     }
+    @include breakpoint-up(mdDesktop) {
+      margin: 0;
+    }
+    @include breakpoint-up(lgDesktop) {
+      padding-bottom: 160px;
+    }
 
     .prevBtn,
     .nextBtn {
@@ -80,6 +123,9 @@
 
       @include breakpoint-up(mdPhone) {
         font-size: 1.5rem;
+      }
+      @include breakpoint-up(smDesktop) {
+        font-size: 2.25rem;
       }
     }
 

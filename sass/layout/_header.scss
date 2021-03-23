@@ -5,6 +5,12 @@
   @include breakpoint-up(tablet) {
     height: auto;
   }
+  @include breakpoint-up(mdDesktop) {
+    height: 100vh;
+  }
+  @include breakpoint-up(lgDesktop) {
+    height: auto;
+  }
 
   &::before {
     content: "";
@@ -30,14 +36,28 @@
     }
     @include breakpoint-up(tablet) {
       clip-path: none;
-      width: 270px;
       height: 100%;
+    }
+    @include breakpoint-up(smDesktop) {
+      width: 370px;
+    }
+    @include breakpoint-up(mdDesktop) {
+      width: 470px;
     }
   }
   // Navbar Section
   &__nav {
     padding-top: 2rem;
     padding-bottom: 3rem;
+
+    @include breakpoint-up(mdDesktop) {
+      padding-top: 3rem;
+    }
+    @include breakpoint-up(lgDesktop) {
+      &.container {
+        max-width: 1600px;
+      }
+    }
 
     &.open {
       .firstline {
@@ -57,6 +77,13 @@
         position: relative;
         z-index: 3;
       }
+      @include breakpoint-up(smDesktop) {
+        margin-right: 110px;
+      }
+      @include breakpoint-up(mdDesktop) {
+        margin-right: 130px;
+      }
+
       a {
         font-family: $ff-secondary;
         font-size: 1.5rem;
@@ -76,8 +103,16 @@
         margin-right: 48px;
         color: $secondary-accent;
 
+        @include breakpoint-up(mdDesktop) {
+          margin-right: 55px;
+        }
+
         ion-icon {
           margin-right: 10px;
+
+          @include breakpoint-up(mdDesktop) {
+            margin-right: 15px;
+          }
         }
       }
     }
@@ -100,9 +135,12 @@
 
         @include breakpoint-up(tablet) {
           width: 24px;
-          height: 2px;
           background-color: $white-color;
           transform-origin: 7px 1px;
+        }
+        @include breakpoint-up(mdDesktop) {
+          width: 32px;
+          transform-origin: 8px 1px;
         }
 
         &.firstline {
@@ -110,6 +148,9 @@
 
           @include breakpoint-up(tablet) {
             margin-bottom: 5px;
+          }
+          @include breakpoint-up(mdDesktop) {
+            margin-bottom: 8px;
           }
         }
       }
@@ -135,6 +176,9 @@
       @include breakpoint-up(tablet) {
         max-width: 380px;
       }
+      @include breakpoint-up(lgDesktop) {
+        max-width: 490px;
+      }
 
       .title {
         font-weight: weight(semi-bold);
@@ -148,6 +192,13 @@
         @include breakpoint-up(tablet) {
           font-size: 3.5rem;
           margin-bottom: 7.125rem;
+        }
+        @include breakpoint-up(mdDesktop) {
+          margin-bottom: 2.5rem;
+        }
+        @include breakpoint-up(lgDesktop) {
+          font-size: 72px;
+          margin-bottom: 5rem;
         }
       }
 

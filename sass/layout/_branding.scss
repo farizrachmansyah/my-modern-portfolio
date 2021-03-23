@@ -1,26 +1,13 @@
 #branding-wrapper {
+  position: relative;
   padding-bottom: 0;
+  background-color: $primary-color;
 
   @include breakpoint-up(tablet) {
     padding: 0;
   }
-}
 
-.branding {
-  flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 55px;
-  background-color: $primary-color;
-  position: relative;
-
-  @include breakpoint-up(mdPhone) {
-    padding-bottom: 75px;
-  }
-  @include breakpoint-up(tablet) {
-    padding-top: 75px;
-  }
-
-  &__circles {
+  .branding__circles {
     position: absolute;
     top: 0;
     left: 0;
@@ -44,6 +31,12 @@
         width: 568px;
         height: 568px;
       }
+      @include breakpoint-up(mdDesktop) {
+        width: 1024px;
+        height: 1024px;
+        top: 10%;
+        left: 80%;
+      }
     }
 
     &::after {
@@ -62,12 +55,41 @@
         height: 1000px;
         top: -85px;
       }
+      @include breakpoint-up(mdDesktop) {
+        width: 1670px;
+        height: 1670px;
+        top: -20%;
+        left: 80%;
+      }
     }
+  }
+}
+
+.branding {
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 55px;
+  position: relative;
+
+  @include breakpoint-up(mdPhone) {
+    padding-bottom: 75px;
+  }
+  @include breakpoint-up(tablet) {
+    padding-top: 75px;
+  }
+  @include breakpoint-up(mdDesktop) {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &__desc {
     padding-bottom: 55px;
     margin-bottom: 55px;
+
+    @include breakpoint-up(smDesktop) {
+      padding-bottom: 0;
+      margin-bottom: 150px;
+    }
 
     .stage {
       color: $white-color;
@@ -86,6 +108,9 @@
       @include breakpoint-up(lgPhone) {
         font-size: 1.5rem;
       }
+      @include breakpoint-up(smDesktop) {
+        width: 600px;
+      }
     }
   }
 
@@ -102,6 +127,10 @@
     }
     @include breakpoint-up(lgPhone) {
       font-size: 3.75rem;
+    }
+    @include breakpoint-up(smDesktop) {
+      font-size: 96px;
+      margin-bottom: 75px;
     }
   }
 }

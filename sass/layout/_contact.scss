@@ -1,11 +1,23 @@
 .contact {
+  @include breakpoint-up(mdDesktop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   &__wrapper {
     .title {
       margin-top: 1rem;
       margin-bottom: 2rem;
+
+      @include breakpoint-up(smDesktop) {
+        font-size: 2rem;
+      }
     }
 
     .getintouch {
+      @include breakpoint-up(smDesktop) {
+        max-width: 50%;
+      }
       &__contact {
         display: grid;
         grid-template-columns: 0.2fr 1.5fr;
@@ -33,6 +45,11 @@
 
     .stayconnected {
       padding-top: 40px;
+
+      @include breakpoint-up(smDesktop) {
+        padding-top: 55px;
+        padding-bottom: 55px;
+      }
 
       &__title {
         font-size: 1.25rem;
@@ -62,6 +79,9 @@
           }
           @include breakpoint-up(lgPhone) {
             padding: 1.125rem;
+          }
+          @include breakpoint-up(smDesktop) {
+            font-size: 1.25rem;
           }
 
           &__icon {

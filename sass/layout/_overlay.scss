@@ -36,6 +36,9 @@
         height: 100vh;
         background-color: $primary-color;
       }
+      @include breakpoint-up(mdDesktop) {
+        width: 470px;
+      }
     }
 
     &-menu {
@@ -46,6 +49,9 @@
         justify-content: center;
         margin-left: 270px;
         text-align: center;
+      }
+      @include breakpoint-up(mdDesktop) {
+        margin-left: 470px;
       }
 
       a {
@@ -74,6 +80,9 @@
         flex-direction: column;
         align-items: center;
         width: 270px;
+      }
+      @include breakpoint-up(mdDesktop) {
+        width: 470px;
       }
 
       a {

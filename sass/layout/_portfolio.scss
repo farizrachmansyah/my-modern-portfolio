@@ -3,6 +3,10 @@
     padding-top: 75px;
     padding-bottom: 75px;
   }
+  @include breakpoint-up(mdDesktop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &__wrapper {
     .title {
@@ -15,6 +19,9 @@
       @include breakpoint-up(tablet) {
         margin-bottom: 55px;
       }
+      @include breakpoint-up(smDesktop) {
+        max-width: 600px;
+      }
     }
 
     .items {
@@ -24,7 +31,10 @@
       grid-row-gap: 2rem;
 
       @include breakpoint-up(tablet) {
-        grid-gap: 2rem;
+        grid-gap: 1.5rem;
+      }
+      @include breakpoint-up(smDesktop) {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       }
 
       &__work {
@@ -34,6 +44,9 @@
         @include breakpoint-up(lgPhone) {
           padding: 1.25rem;
         }
+        @include breakpoint-up(smDesktop) {
+          padding: 1.5rem;
+        }
 
         &-title {
           margin-bottom: 0.625rem;
@@ -41,6 +54,9 @@
           @include breakpoint-up(lgPhone) {
             margin-bottom: 1rem;
             font-size: 1.25rem;
+          }
+          @include breakpoint-up(smDesktop) {
+            margin-bottom: 1.25rem;
           }
         }
 

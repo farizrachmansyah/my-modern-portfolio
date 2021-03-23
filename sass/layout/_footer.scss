@@ -35,6 +35,11 @@
         height: 568px;
         bottom: 194px;
       }
+      @include breakpoint-up(mdDesktop) {
+        width: 1024px;
+        height: 1024px;
+        bottom: 224px;
+      }
     }
 
     &::after {
@@ -52,6 +57,10 @@
         width: 1000px;
         height: 1000px;
       }
+      @include breakpoint-up(mdDesktop) {
+        width: 1670px;
+        height: 1670px;
+      }
     }
   }
 
@@ -64,6 +73,9 @@
     }
     @include breakpoint-up(tablet) {
       font-size: 3.5rem;
+    }
+    @include breakpoint-up(smDesktop) {
+      font-size: 4rem;
     }
   }
 

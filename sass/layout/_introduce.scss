@@ -23,13 +23,13 @@
     }
 
     .desc {
-      max-width: 270px;
+      // max-width: 270px;
 
       @include breakpoint-up(mdPhone) {
         font-size: 1.25rem;
       }
       @include breakpoint-up(tablet) {
-        max-width: 50%;
+        max-width: 70%;
       }
     }
   }
