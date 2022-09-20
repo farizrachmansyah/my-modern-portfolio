@@ -1,0 +1,65 @@
+@import 'partials/normalize';
+@import 'partials/variables';
+@import 'partials/resets';
+@import 'partials/helpers';
+@import 'partials/print';
+
+@import 'modules/fonts';
+@import 'modules/flexbox';
+@import 'modules/buttons';
+
+html {
+	font: 400 13px $base_font_family;
+	line-height: $base_line_height;
+
+	@media #{$medium} {
+		font-size: $base_font_size;
+	}
+}
+
+body {
+	// text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+	color: $black80;
+	background-color: #fff;
+}
+
+a {
+	color: $link;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: $link_hover;
+	}
+}
+
+.container {
+	width: 92%;
+	max-width: 960px;
+	margin: 0 auto;
+
+	@media #{$medium} {
+		width: 94%;
+	}
+
+	@media #{$extra_large} {
+		max-width: 1280px;
+	}
+}
+
+.container--small {
+	max-width: 450px;
+
+	@media #{$extra_large} {
+		max-width: 450px;
+	}
+}
+
+.container--medium {
+	max-width: 700px;
+
+	@media #{$extra_large} {
+		max-width: 700px;
+	}
+}
