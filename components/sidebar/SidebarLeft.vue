@@ -16,6 +16,11 @@
           <font-awesome-icon icon="fa-brands fa-instagram" />
         </a>
       </li>
+      <li>
+        <a href="https://open.spotify.com/user/farizrachmansyah" target="_blank" class="link">
+          <font-awesome-icon icon="fa-brands fa-spotify" />
+        </a>
+      </li>
     </ul>
   </div>
 </template>
