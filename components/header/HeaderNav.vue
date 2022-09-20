@@ -4,8 +4,9 @@
       <li
         v-for="(nav, i) in navData"
         :key="i"
+        class="mr-12"
       >
-        <nuxt-link :to="nav.url">
+        <nuxt-link :to="nav.url" class="nav-link pv-8 ph-12">
           {{ nav.name }}
         </nuxt-link>
       </li>
@@ -30,5 +31,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.nav-link {
+  display: inline-block;
+  font-family: $font_mono;
+}
 </style>

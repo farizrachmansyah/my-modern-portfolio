@@ -1,8 +1,8 @@
 .btn {
     display: inline-block;
-    padding: 8px 24px;
+    padding: 12px 16px;
     border: none;
-    font-family: inherit;
+    font-family: $font_mono;
     line-height: $base_line_height;
     text-align: center;
     white-space: nowrap;
@@ -50,8 +50,6 @@
 @mixin btnGhost($bg, $color: #fff, $shade: dark) {
     @extend .btn;
     color: $bg;
-    padding-top: 8px;
-    padding-bottom: 6px;
     background: transparent;
     border-radius: 4px;
     border-style: solid;
@@ -69,12 +67,7 @@
     }
 
     &:hover {
-        color: #fff;
-        @if $shade == dark {
-            background-color: $bg;
-        } @else if $shade == light {
-            background-color: darken($bg, 10%);
-        }
+        background-color: darken($bg, 37%);
     }
 
     &[disabled],

@@ -2,10 +2,12 @@
 // ------------------------------------------------------------------------ //
 $base_px_font_size: 14;
 $base_font_size: $base_px_font_size * 1px;
-$base_line_height: 1.6;
+$base_line_height: 1.3;
 $font_sans_serif: 'DM Sans',-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 	'Helvetica Neue', Arial, sans-serif;
 $font_serif: 'DM Serif Display',-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+	'Helvetica Neue', Arial, sans-serif;
+$font_mono: 'SF Mono',-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 	'Helvetica Neue', Arial, sans-serif;
 $base_font_family: $font_sans_serif;
 $space: $base_line_height * 1em;
@@ -14,11 +16,11 @@ $space: $base_line_height * 1em;
 // ------------------------------------------------------------------------ //
 
 $palettes: (
-	'primary': #013A70,
-	'secondary': #F5A723,
+	'primary': #ccd6f6,
+	'secondary': #8892b0,
 	'black': #000,
-	'orange': #ff6600,
-	'red': #D60000,
+	'orange': #ff6900,
+	'red': #e30714,
 	'green': #30981D,
 	'grey': #828282,
 	'dark-grey': #656565,
