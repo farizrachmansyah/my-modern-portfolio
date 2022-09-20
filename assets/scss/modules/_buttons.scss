@@ -1,0 +1,117 @@
+.btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border: none;
+    font-family: $font_mono;
+    line-height: $base_line_height;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:focus {
+        outline: none;
+    }
+
+    &[disabled],
+    &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+
+@mixin btnStyle($bg, $color: #fff, $shade: dark) {
+    @extend .btn;
+    color: $color;
+    background-color: $bg;
+    border-radius: 4px;
+
+    &:hover {
+        color: $color;
+        box-shadow: inset 0 0 2px $bg;
+        @if $shade == dark {
+            background: lighten($bg, 10%);
+        } @else if $shade == light {
+            background: darken($bg, 9%);
+        }
+    }
+
+    &[disabled],
+    &.disabled {
+        opacity: .6;
+    }
+}
+
+@mixin btnGhost($bg, $color: #fff, $shade: dark) {
+    @extend .btn;
+    color: $bg;
+    background: transparent;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+
+    &.btn--small {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    @if $shade == dark {
+        border-color: $bg;
+    } @else {
+        border-color: darken($bg, 10%);
+    }
+
+    &:hover {
+        background-color: darken($bg, 38%);
+    }
+
+    &[disabled],
+    &.disabled {
+        opacity: .6;
+    }
+}
+
+.btn--block {
+    width: 100%;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.btn--small {
+    padding: 3px 8px;
+}
+
+@each $state, $color in $palettes {
+    .btn--#{$state} {
+        @include btnStyle($color);
+    }
+
+    .btn--ghost-#{$state} {
+        @include btnGhost($color);
+    }
+}
+
+@each $state, $color in $light-palettes {
+    .btn--#{$state} {
+        @include btnStyle($color, $black80, light);
+    }
+
+    .btn--ghost-#{$state} {
+        @include btnGhost($color, $black80, light);
+    }
+}
+
+.btn--transparent {
+    @include btnGhost($primary);
+    border-color: transparent;
+
+    &:hover {
+        background: transparent;
+        color: $primary;
+        text-shadow: none;
+    }
+}
