@@ -33,6 +33,6 @@ export default {
 <style lang="scss" scoped>
 .nav-link {
   display: inline-block;
-  font-family: $font_mono;
+  font-family: $font_serif;
 }
 </style>

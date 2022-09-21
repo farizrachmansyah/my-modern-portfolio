@@ -48,27 +48,27 @@ export default {
   &-name, &-tagline {
     line-height: 1;
     font-family: $font_serif;
-    font-size: clamp(24px, 8vw, 48px);
     font-weight: 400;
   }
 
   &-title {
     margin-bottom: 20px;
-    font-family: $font_mono;
-    font-size: clamp(14px, 5vw, 16px);
+    font-family: $font_serif;
+    font-size: 16px;
     font-weight: 400;
   }
 
   &-name {
     color: $primary;
+    font-size: 60px;
   }
 
   &-tagline {
     margin-top: 10px;
+    font-size: 38px;
   }
 
   &-desc {
-    line-height: 26px;
     max-width: 600px;
     margin-top: 20px;
     font-size: 20px;

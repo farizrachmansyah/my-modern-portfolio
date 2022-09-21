@@ -33,7 +33,7 @@ export default {
   .link {
     padding: 12px 10px;
     writing-mode: vertical-rl;
-    font-family: $font_mono;
+    font-family: $font_serif;
     transition: all 0.2s ease-in-out;
 
     &::after, &::before {
