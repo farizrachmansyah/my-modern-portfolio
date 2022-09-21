@@ -8,7 +8,8 @@
         Fariz Rachmansyah.
       </h2>
       <h3 class="home-tagline">
-        I build things to be rock 'n rollin'.
+        <span class="d-block">I build things that</span>
+        <span>rock 'n rollin'.</span>
       </h3>
       <p class="home-desc">
         I'm a software engineer that passionate in crafting digital products. Currently, I'm focused on building various types of high-performance frontend web applications at
@@ -65,7 +66,7 @@ export default {
 
   &-tagline {
     margin-top: 10px;
-    font-size: 38px;
+    font-size: 60px;
   }
 
   &-desc {
