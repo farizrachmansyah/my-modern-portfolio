@@ -1,6 +1,6 @@
 // Typography
 // ------------------------------------------------------------------------ //
-$base_px_font_size: 12;
+$base_px_font_size: 20;
 $base_font_size: $base_px_font_size * 1px;
 $base_line_height: 1.3;
 $font_sans_serif: 'Chau Philomene One',-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -14,8 +14,8 @@ $space: $base_line_height * 1em;
 // ------------------------------------------------------------------------ //
 
 $palettes: (
-	'primary': #ccd6f6,
-	'secondary': #8892b0,
+	'primary': #8892b0,
+	'secondary': #ccd6f6,
 	'black': #000,
 	'orange': #ff6900,
 	'red': #e30714,

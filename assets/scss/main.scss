@@ -20,13 +20,13 @@ html {
 body {
 	// text-decoration-skip: ink;
 	text-decoration-skip-ink: auto;
-	color: $secondary;
+	color: $primary;
 	background-color: $black;
 }
 
 a {
 	position: relative;
-	color: $link;
+	color: $primary;
 	text-decoration: none;
 
 	&::after {

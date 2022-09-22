@@ -3,7 +3,7 @@
     <header id="header">
       <div class="header-wrapper flex f-space-between v-center">
         <HeaderLogo />
-        <HeaderNav :nav-data="navData" />
+        <HeaderNav :nav-data="menus" />
       </div>
     </header>
     <SidebarLeft />
@@ -17,7 +17,7 @@ export default {
   name: 'DefaultLayout',
   data () {
     return {
-      navData: [
+      menus: [
         {
           name: 'About',
           url: '/about'
@@ -29,10 +29,6 @@ export default {
         {
           name: 'Project',
           url: '/project'
-        },
-        {
-          name: 'Tools',
-          url: '/tools'
         },
         {
           name: 'Contact',

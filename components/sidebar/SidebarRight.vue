@@ -34,6 +34,7 @@ export default {
     padding: 12px 10px;
     writing-mode: vertical-rl;
     font-family: $font_serif;
+    font-size: 12px;
     transition: all 0.2s ease-in-out;
 
     &::after, &::before {

@@ -34,5 +34,6 @@ export default {
 .nav-link {
   display: inline-block;
   font-family: $font_serif;
+  font-size: 12px;
 }
 </style>
