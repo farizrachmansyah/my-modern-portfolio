@@ -29,8 +29,8 @@
     <section v-for="item in menus" :id="item.title" :key="item.id" :class="['site-section', item.title]">
       <SectionAbout v-if="item.title === 'about'" />
       <SectionExperience v-else-if="item.title === 'experience'" />
-      <!-- <SectionProject v-else-if="item.title === 'project'" />
-      <SectionContact v-else /> -->
+      <SectionProject v-else-if="item.title === 'project'" />
+      <!-- <SectionContact v-else /> -->
     </section>
   </main>
 </template>

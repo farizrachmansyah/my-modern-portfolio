@@ -64,7 +64,7 @@ export default {
   margin-left: 40px;
 
   &-type {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #232323;
 
     .btn-type {
       position: relative;

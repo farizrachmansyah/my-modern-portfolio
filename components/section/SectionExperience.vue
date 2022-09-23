@@ -108,7 +108,7 @@ export default {
   .btn-company {
     width: 100%;
     border: none;
-    border-left: 2px solid #333;
+    border-left: 2px solid #232323;
     border-radius: 0;
     padding: 0 20px;
     text-align: left;
