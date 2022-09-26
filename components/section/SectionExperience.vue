@@ -102,25 +102,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.inner {
+  flex-direction: column;
+
+  @media #{$large} {
+    flex-direction: row;
+  }
+}
 .company {
-  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 12px;
+  overflow-x: auto;
+
+  @media #{$large} {
+    display: unset;
+    width: unset;
+    margin-bottom: 0;
+  }
 
   .btn-company {
     width: 100%;
-    border: none;
-    border-left: 2px solid #232323;
-    border-radius: 0;
-    padding: 0 20px;
-    text-align: left;
     height: 42px;
+    border: none;
+    padding: 0 12px;
+    border-bottom: 2px solid #232323;
+    border-radius: 0;
+    text-align: left;
+    font-size: 10px;
+
+    @media #{$medium} {
+      font-size: 14px;
+    }
+
+    @media #{$large} {
+      padding: 0 20px;
+      border-bottom: none;
+      border-left: 2px solid #232323;
+    }
   }
   .btn-company:hover, .btn-company:focus {
     color: $red;
     background-color: rgba($red, 0.2);
   }
   .btn-company.active {
-    border-left: 2px solid $red;
+    border-bottom: 2px solid $red;
     color: $red;
+
+    @media #{$large} {
+      border-bottom: none;
+      border-left: 2px solid $red;
+    }
   }
 }
 </style>

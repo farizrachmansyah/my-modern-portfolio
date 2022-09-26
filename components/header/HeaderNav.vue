@@ -31,6 +31,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+nav {
+  display: none;
+
+  @media #{$medium} {
+    display: block;
+  }
+}
+
 .nav-link {
   display: inline-block;
   font-family: $font_serif;

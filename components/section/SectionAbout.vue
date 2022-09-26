@@ -4,7 +4,7 @@
     <div class="inner">
       <p class="inner-text">
         Alright, let me introduce myself. I'm Fariz Rachmansyah and you can
-        call me Fariz. At this moment, I'm a software engineer that currently
+        call me Fariz. At this moment, I'm a software engineer that
         focuses on web development with 3 years of total experience and nearly
         1 year of mature experience in an innovative startup environment.
       </p>
@@ -52,12 +52,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.inner-text {
+  font-size: 16px;
+
+  @media #{$medium} {
+    font-size: 20px;
+  }
+}
+
 .inner-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
   gap: 10px;
   font-family: $font_serif;
-  font-size: 14px;
+  font-size: 10px;
+
+  @media #{$medium} {
+    font-size: 14px;
+  }
 
   .item::before {
     content: '\2713';

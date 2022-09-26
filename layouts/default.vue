@@ -12,6 +12,28 @@
       <nuxt />
     </div>
     <footer id="footer">
+      <ul class="list-nostyle side-list">
+        <li>
+          <a href="https://github.com/farizrachmansyah" target="_blank" class="link">
+            <font-awesome-icon icon="fa-brands fa-github" />
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/farizrachmansyah" target="_blank" class="link">
+            <font-awesome-icon icon="fa-brands fa-linkedin-in" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/farizrachmansyah/" target="_blank" class="link">
+            <font-awesome-icon icon="fa-brands fa-instagram" />
+          </a>
+        </li>
+        <li>
+          <a href="https://open.spotify.com/user/farizrachmansyah" target="_blank" class="link">
+            <font-awesome-icon icon="fa-brands fa-spotify" />
+          </a>
+        </li>
+      </ul>
       <p class="mt-0 mb-10">
         Design inspired by Brittany Chiang
       </p>
@@ -86,7 +108,7 @@ export default {
     height: 70px;
     transform: none;
     background-color: rgba(19, 19, 19, 0.85);
-    box-shadow: 0 10px 30px -15px #760900;
+    box-shadow: 0 10px 30px -15px #760a00;
     backdrop-filter: blur(12px);
   }
   &.scroll-down {
@@ -95,7 +117,11 @@ export default {
 
   .header-wrapper {
     height: 100%;
-    padding: 0 50px;
+    padding: 0 25px;
+
+    @media #{$medium} {
+      padding: 0 50px;
+    }
   }
 }
 
@@ -106,7 +132,39 @@ export default {
 #footer {
   padding: 24px;
   font-family: $font_serif;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
+
+  @media #{$medium} {
+    font-size: 12px;
+  }
+
+  .side-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+
+    .link {
+      display: inline-block;
+      padding: 12px 10px;
+      font-size: 20px;
+      transition: all 0.2s ease-in-out;
+
+      &::after, &::before {
+        all: unset;
+      }
+
+      &:hover {
+        color: $red;
+        transform: translateY(-10%);
+      }
+    }
+
+    @media #{$medium} {
+      display: none;
+    }
+  }
 }
 </style>

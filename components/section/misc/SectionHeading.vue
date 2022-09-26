@@ -26,11 +26,16 @@ export default {
 
 <style lang="scss" scoped>
 .section-title {
-  line-height: 0.4;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  // line-height: 0.4;
+  margin-top: 10px;
+  margin-bottom: 20px;
   font-family: $font_serif;
-  font-size: 24px;
+  font-size: clamp(18px,5vw,24px);
+
+  @media #{$large} {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 
   &.contact-section {
     justify-content: center;

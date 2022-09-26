@@ -21,7 +21,7 @@
           class="text-red"
         >Suitmedia</a>.
       </p>
-      <button class="btn--ghost-red mt-60 pv-20 ph-28">
+      <button class="btn--ghost-red home-btn pv-20 ph-28">
         Get in touch
       </button>
     </section>
@@ -75,7 +75,17 @@ export default {
 <style lang="scss" scoped>
 .site-main {
   min-height: 100vh;
-  padding: 0 150px;
+  padding: 0 25px;
+
+  @media #{$small} {
+    padding: 0 50px;
+  }
+  @media #{$medium} {
+    padding: 0 100px;
+  }
+  @media #{$large} {
+    padding: 0 150px;
+  }
 }
 
 .site-section {
@@ -83,6 +93,9 @@ export default {
   margin: 0 auto;
   padding: 100px 0;
 
+  &.home {
+    padding: 0;
+  }
   &.about {
     max-width: 700px;
   }
@@ -107,39 +120,45 @@ export default {
   &-desc {
     margin: 0;
   }
+
   &-name,
   &-tagline {
     line-height: 1;
     font-family: $font_serif;
     font-weight: 400;
+    font-size: clamp(20px, 8vw, 60px);
+    // font-size: 60px;
   }
 
   &-title {
     margin-bottom: 20px;
     font-family: $font_serif;
-    font-size: 16px;
+    font-size: clamp(10px, 3.5vw, 16px);
     font-weight: 400;
   }
 
   &-name {
     color: $secondary;
-    font-size: 60px;
   }
 
   &-tagline {
     margin-top: 10px;
-    font-size: 60px;
   }
 
   &-desc {
     max-width: 600px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: clamp(16px, 4vw, 20px);
+    // font-size: 20px;
 
     a::before,
     a::after {
       background-color: $primary;
     }
+  }
+
+  &-btn {
+    margin-top: 60px;
   }
 }
 </style>

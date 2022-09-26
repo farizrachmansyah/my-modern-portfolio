@@ -36,6 +36,11 @@ export default {
   position: fixed;
   left: 40px;
   bottom: 0;
+  display: none;
+
+  @media #{$medium} {
+    display: unset;
+  }
 }
 
 .side-list {

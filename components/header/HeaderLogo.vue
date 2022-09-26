@@ -18,7 +18,11 @@ export default {
 
 <style lang="scss" scoped>
 .logo a {
-  font-size: 42px;
+  font-size: 32px;
+
+  @media #{$medium} {
+    font-size: 42px;
+  }
 
   &::after, &::before {
     all: unset;

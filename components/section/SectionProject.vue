@@ -120,16 +120,33 @@ export default {
 
 <style lang="scss" scoped>
 .project-item {
-  position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  background: url('~/static/assets/img-tes.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px -15px #760a00;
+
+  @media #{$medium} {
+    position: relative;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 100px;
+  }
 
   &-image {
+    display: none;
     position: relative;
     width: 60%;
-    box-shadow: 0 10px 30px -10px #760900;
+    box-shadow: 0 10px 30px -10px #760a00;
     border-radius: 4px;
     overflow: hidden;
     transition: all 0.15s ease-in-out;
+
+    @media #{$medium} {
+      display: block;
+    }
   }
 
   &.even {

@@ -17,9 +17,13 @@ export default {
   position: fixed;
   right: 40px;
   bottom: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
+
+  @media #{$medium} {
+    display: flex;
+  }
 
   &::after {
     content: '';

@@ -3,7 +3,7 @@
     <h2 class="m-0 text-center text-secondary">
       Other Noteworthy Projects
     </h2>
-    <ul class="list-nostyle inner mt-50">
+    <ul class="list-nostyle inner">
       <li v-for="item in 6" :key="item">
         <a href="#" class="inner-wrapper">
           <div class="inner-head">
@@ -42,16 +42,26 @@ export default {
 <style lang="scss" scoped>
 .inner {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 16px;
+  margin-top: 25px;
+
+  @media #{$medium} {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 50px;
+  }
 
   &-wrapper {
     display: inline-block;
-    padding: 32px 28px;
+    padding: 18px 16px;
     border-radius: 4px;
     background-color: #131313;
-    box-shadow: 0 10px 30px -15px #760900;
+    box-shadow: 0 10px 30px -15px #760a00;
     transition: all 0.2s ease-in-out;
+
+    @media #{$large} {
+      padding: 32px 28px;
+    }
 
     &::after, &::before {
       all: unset;
@@ -59,7 +69,7 @@ export default {
 
     &:hover {
       transform: translateY(-2%);
-      box-shadow: 0 20px 30px -15px #760900;
+      box-shadow: 0 20px 30px -15px #760a00;
 
       .other-projects-body .title {
         color: $red;
@@ -70,11 +80,19 @@ export default {
   &-head {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+
+    @media #{$large} {
+      margin-bottom: 35px;
+    }
 
     .site {
-      font-size: 40px;
+      font-size: 24px;
       color: $red;
+
+      @media #{$large} {
+        font-size: 40px;
+      }
     }
 
     .github{
@@ -92,11 +110,19 @@ export default {
     .title {
       margin-bottom: 10px;
       color: $secondary;
-      font-size: 22px;
+      font-size: 16px;
+
+      @media #{$large} {
+        font-size: 22px;
+      }
     }
     .desc {
       margin: 0;
-      font-size: 16px;
+      font-size: 14px;
+
+      @media #{$large} {
+        font-size: 16px;
+      }
     }
   }
 
@@ -105,8 +131,12 @@ export default {
     align-items: center;
     margin-top: 20px;
     font-family: $font_serif;
-    font-size: 12px;
     gap: 0 16px;
+    font-size: 10px;
+
+    @media #{$large} {
+      font-size: 12px;
+    }
   }
 }
 </style>
