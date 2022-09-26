@@ -26,11 +26,20 @@
       </button>
     </section>
 
-    <section v-for="item in menus" :id="item.title" :key="item.id" :class="['site-section', item.title]">
-      <SectionAbout v-if="item.title === 'about'" />
-      <SectionExperience v-else-if="item.title === 'experience'" />
-      <SectionProject v-else-if="item.title === 'project'" />
-      <!-- <SectionContact v-else /> -->
+    <section id="about" class="site-section about">
+      <SectionAbout />
+    </section>
+    <section id="experience" class="site-section experience">
+      <SectionExperience />
+    </section>
+    <section id="project" class="site-section project">
+      <SectionProject />
+    </section>
+    <section id="other-projects" class="site-section other-projects">
+      <SectionOtherProjects />
+    </section>
+    <section id="contact" class="site-section contact">
+      <SectionContact />
     </section>
   </main>
 </template>
@@ -79,6 +88,9 @@ export default {
   }
   &.experience {
     max-width: 850px;
+  }
+  &.contact {
+    max-width: 550px;
   }
 }
 

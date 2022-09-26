@@ -111,68 +111,6 @@ export default {
               }
             ]
           }
-        },
-        {
-          image: 'assets/img-tes.png',
-          overview: {
-            project_title: 'Scrapesi',
-            project_desc: 'Web Scraping implementation using Puppeteer and Nuxt on web-based job portal system.',
-            project_tools: [
-              {
-                name: 'Nuxt.js'
-              },
-              {
-                name: 'Vuex'
-              },
-              {
-                name: 'Puppeteer.js'
-              },
-              {
-                name: 'VS Code'
-              }
-            ],
-            project_sources: [
-              {
-                name: 'Github',
-                url: 'https://github.com/farizrachmansyah/scrapesi'
-              },
-              {
-                name: 'Site',
-                url: 'https://scrapesi.herokuapp.com'
-              }
-            ]
-          }
-        },
-        {
-          image: 'assets/img-tes.png',
-          overview: {
-            project_title: 'Scrapesi',
-            project_desc: 'Web Scraping implementation using Puppeteer and Nuxt on web-based job portal system.',
-            project_tools: [
-              {
-                name: 'Nuxt.js'
-              },
-              {
-                name: 'Vuex'
-              },
-              {
-                name: 'Puppeteer.js'
-              },
-              {
-                name: 'VS Code'
-              }
-            ],
-            project_sources: [
-              {
-                name: 'Github',
-                url: 'https://github.com/farizrachmansyah/scrapesi'
-              },
-              {
-                name: 'Site',
-                url: 'https://scrapesi.herokuapp.com'
-              }
-            ]
-          }
         }
       ]
     }

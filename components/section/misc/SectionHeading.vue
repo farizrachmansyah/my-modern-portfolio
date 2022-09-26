@@ -1,5 +1,5 @@
 <template>
-  <h2 class="section-title flex v-center text-caps">
+  <h2 class="section-title flex v-center text-caps" :class="{'contact-section': isContact}">
     <div class="section-title-icon mr-12">
       &#9760;
     </div>
@@ -15,6 +15,10 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    isContact: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -28,13 +32,20 @@ export default {
   font-family: $font_serif;
   font-size: 24px;
 
+  &.contact-section {
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
   &-icon {
     font-size: 2.5em;
     color: $red;
   }
 
   &-text {
-    color: $secondary;
+    color: $red;
   }
 }
 </style>
