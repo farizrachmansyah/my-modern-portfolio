@@ -3,12 +3,21 @@
     <header id="header" :class="{ 'scroll-up': onScrollingUp, 'scroll-down': onScrollingDown }">
       <div class="header-wrapper flex f-space-between v-center">
         <HeaderLogo />
-        <HeaderNav :nav-data="menus" />
+        <div class="header-nav">
+          <button
+            class="btn--ghost-red nav-toggle"
+            type="button"
+            @click="showNav = !showNav"
+          >
+            <font-awesome-icon :icon="['fa-solid', showNav ? 'fa-xmark' : 'fa-bars-staggered']" />
+          </button>
+          <HeaderNav :nav-data="menus" :is-open="showNav" />
+        </div>
       </div>
     </header>
     <SidebarLeft />
     <SidebarRight />
-    <div class="content">
+    <div class="content" :class="{ 'nav-opened': showNav }">
       <nuxt />
     </div>
     <footer id="footer">
@@ -51,6 +60,7 @@ export default {
     return {
       onScrollingUp: false,
       onScrollingDown: false,
+      showNav: false,
       menus: [
         {
           name: 'About',
@@ -69,6 +79,15 @@ export default {
           url: '/contact'
         }
       ]
+    }
+  },
+  watch: {
+    showNav () {
+      if (this.showNav) {
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden'
+      } else {
+        document.getElementsByTagName('body')[0].style.overflow = 'initial'
+      }
     }
   },
   mounted () {
@@ -100,9 +119,13 @@ export default {
   left: 0;
   z-index: 3;
   width: 100%;
-  height: 100px;
+  height: 70px;
   background: transparent;
   transition: all 0.3s ease-out;
+
+  @media #{$medium} {
+    height: 100px;
+  }
 
   &.scroll-up {
     height: 70px;
@@ -123,10 +146,30 @@ export default {
       padding: 0 50px;
     }
   }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 2;
+    border: none;
+    padding: 0;
+    font-size: 26px;
+
+    &:hover, &:focus {
+      background: none;
+    }
+
+    @media #{$medium} {
+      display: none;
+    }
+  }
 }
 
 .content {
   margin-bottom: 100px;
+
+  &.nav-opened {
+    filter: blur(3px);
+  }
 }
 
 #footer {

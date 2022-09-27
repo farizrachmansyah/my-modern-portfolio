@@ -1,6 +1,6 @@
 <template>
-  <nav>
-    <ul class="list-nostyle flex v-center">
+  <nav :class="{'nav-opened': isOpen}">
+    <ul class="list-nostyle nav-wrapper">
       <li
         v-for="(nav, i) in navData"
         :key="i"
@@ -25,6 +25,10 @@ export default {
     navData: {
       type: Array,
       default: () => []
+    },
+    isOpen: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -32,10 +36,37 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  background: #131313;
+  height: 100%;
+  width: 77.5%;
+  transition: all 0.3s ease-in-out;
+
+  &.nav-opened {
+    transform: none;
+  }
 
   @media #{$medium} {
+    all: unset;
     display: block;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 100%;
+
+  @media #{$medium} {
+    flex-direction: row;
+    gap: unset;
+    height: unset;
   }
 }
 

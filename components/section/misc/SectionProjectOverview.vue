@@ -92,7 +92,11 @@ export default {
 
   &-mark {
     font-family: $font_serif;
-    font-size: 12px;
+    font-size: 10px;
+
+    @media #{$small} {
+      font-size: 12px;
+    }
   }
 
   &-title {
@@ -115,15 +119,17 @@ export default {
 
   &-tools {
     flex-wrap: wrap;
+    gap: 12px;
     font-family: $font_serif;
-    font-size: 12px;
+    font-size: 10px;
 
-    @media #{$medium} {
-      justify-content: flex-end;
+    @media #{$small} {
+      font-size: 12px;
     }
 
-    & > li:not(:last-child) {
-      margin-right: 20px;
+    @media #{$medium} {
+      gap: 20px;
+      justify-content: flex-end;
     }
   }
 
