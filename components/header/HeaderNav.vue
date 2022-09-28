@@ -6,9 +6,9 @@
         :key="i"
         class="mr-12"
       >
-        <nuxt-link :to="nav.url" class="nav-link pv-8 ph-12">
+        <button class="btn nav-link pv-8 ph-12" @click.prevent="goToSection(nav.id)">
           {{ nav.name }}
-        </nuxt-link>
+        </button>
       </li>
       <li>
         <button class="btn--ghost-red">
@@ -29,6 +29,11 @@ export default {
     isOpen: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    goToSection (id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
     }
   }
 }
@@ -71,8 +76,14 @@ nav {
 }
 
 .nav-link {
-  display: inline-block;
+  border: none;
+  background: none;
   font-family: $font_serif;
   font-size: 12px;
+  color: $primary;
+
+  &:hover {
+    color: $red;
+  }
 }
 </style>

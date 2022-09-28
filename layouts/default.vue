@@ -63,20 +63,20 @@ export default {
       showNav: false,
       menus: [
         {
-          name: 'About',
-          url: '/about'
+          id: 'about',
+          name: 'About'
         },
         {
-          name: 'Experience',
-          url: '/experience'
+          id: 'experience',
+          name: 'Experience'
         },
         {
-          name: 'Project',
-          url: '/project'
+          id: 'project',
+          name: 'Project'
         },
         {
-          name: 'Contact',
-          url: '/contact'
+          id: 'contact',
+          name: 'Contact'
         }
       ]
     }

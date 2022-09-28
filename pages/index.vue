@@ -21,7 +21,7 @@
           class="text-red"
         >Suitmedia</a>.
       </p>
-      <button class="btn--ghost-red home-btn pv-20 ph-28">
+      <button class="btn--ghost-red home-btn pv-20 ph-28" @click.prevent="goToContact()">
         Get in touch
       </button>
     </section>
@@ -67,6 +67,11 @@ export default {
           title: 'contact'
         }
       ]
+    }
+  },
+  methods: {
+    goToContact () {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
     }
   }
 }
