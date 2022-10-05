@@ -1,5 +1,9 @@
 export default {
   target: 'static',
+  env: {
+    CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
+    CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Fariz Rachmansyah',
@@ -19,7 +23,7 @@ export default {
   css: ['~/assets/scss/main.scss', '@fortawesome/fontawesome-svg-core/styles.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/fontawesome.js'],
+  plugins: ['~/plugins/fontawesome', '~/plugins/contentful'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -40,7 +44,25 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/'
+    proxy: true,
+    baseURL: process.env.BASE_URL,
+    withCredentials: false,
+    retry: true,
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  },
+
+  proxy: {
+    '/api': {
+      target: process.env.ADMIN_URL,
+      pathRewrite: { '^/api/': '' },
+      changeOrigin: true,
+      onProxyReq (request) {
+        request.setHeader('origin', process.env.ADMIN_URL)
+      }
+    }
   },
 
   styleResources: {

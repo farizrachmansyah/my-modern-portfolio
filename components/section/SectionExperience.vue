@@ -3,9 +3,9 @@
     <SectionHeading title="Where I've Worked" />
     <div class="inner flex">
       <ul class="list-nostyle company">
-        <li v-for="item in experiences" :key="item.id">
-          <button :class="['btn--transparent btn-company', setActive(item.name)]" @click.prevent="active = item.name">
-            {{ item.name }}
+        <li v-for="ex in experiences" :key="ex.id">
+          <button :class="['btn--transparent btn-company', setActive(ex.name)]" @click.prevent="active = ex.name">
+            {{ ex.name }}
           </button>
         </li>
       </ul>
@@ -15,77 +15,59 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
-      active: null,
-      experiences: [
-        {
-          id: '1',
-          name: 'Suitmedia',
-          employments: [
-            {
-              type: 'Internship',
-              jobs: [
-                {
-                  title: 'Frontend Developer Intern',
-                  date: {
-                    start: 'Aug 2021',
-                    end: 'Feb 2022'
-                  },
-                  activities: [
-                    'Involved in more than 5 professional web application development projects for business clients',
-                    'Fully responsible for client‐side e‐commerce platform development on B2B2C E‐Commerce SaaS project',
-                    'Promoted after completing a 6-month internship due to strong performance and organizational impact'
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'Freelance',
-              jobs: [
-                {
-                  title: 'Frontend Developer',
-                  date: {
-                    start: 'Mar 2022',
-                    end: 'May 2022'
-                  },
-                  activities: [
-                    'Built various types of high‐performance frontend web applications',
-                    "Work with a variety of different technologies like JavaScript's libraries",
-                    'Communicate with multi-disciplinary teams of executives, analysts, designers, and developers on a daily basis'
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'Full Time',
-              jobs: [
-                {
-                  title: 'Frontend Developer',
-                  date: {
-                    start: 'Oct 2022',
-                    end: 'Present'
-                  },
-                  activities: null
-                }
-              ]
-            }
-          ]
-        },
-        {
-          id: '2',
-          name: 'LePKom Gunadarma',
-          employments: [
-            {
-              type: 'Contract'
-            }
-          ]
-        }
-      ]
+      active: null
     }
   },
   computed: {
+    ...mapState({
+      compData: (state) => {
+        return state.cms.content.company
+      },
+      empTypeData: (state) => {
+        return state.cms.content.employmentType
+      },
+      expData: (state) => {
+        return state.cms.content.experience
+      }
+    }),
+    experiences () {
+      const experienceArr = []
+      this.compData.forEach((company) => {
+        const employmentsArr = []
+        this.empTypeData.forEach((type) => {
+          const jobsArr = []
+          this.expData.forEach((ex) => {
+            if (ex.fields.company.sys.id === company.sys.id && ex.fields.employment_type.sys.id === type.sys.id) {
+              jobsArr.push({
+                title: ex.fields.title,
+                date_start: this.configDate(ex.fields.date_start),
+                date_end: this.configDate(ex.fields.date_end),
+                jobdesk: ex.fields.jobdesk
+              })
+            }
+          })
+          if (jobsArr.length) {
+            employmentsArr.push({
+              type: type.fields.type,
+              jobs: jobsArr
+            })
+          }
+        })
+        if (employmentsArr.length) {
+          experienceArr.unshift({
+            id: company.sys.id,
+            name: company.fields.name,
+            employments: employmentsArr
+          })
+        }
+      })
+      return experienceArr
+    },
     getDetail () {
       return this.experiences.find(item => item.name === this.active).employments
     }
@@ -94,6 +76,13 @@ export default {
     this.active = this.experiences[0].name
   },
   methods: {
+    configDate (date) {
+      const realDate = new Date(date)
+      return realDate.toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'short'
+      })
+    },
     setActive (company) {
       return company === this.active ? 'active' : ''
     }

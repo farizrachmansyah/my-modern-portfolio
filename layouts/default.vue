@@ -11,7 +11,7 @@
           >
             <font-awesome-icon :icon="['fa-solid', showNav ? 'fa-xmark' : 'fa-bars-staggered']" />
           </button>
-          <HeaderNav :nav-data="menus" :is-open="showNav" />
+          <HeaderNav :is-open="showNav" />
         </div>
       </div>
     </header>
@@ -60,25 +60,7 @@ export default {
     return {
       onScrollingUp: false,
       onScrollingDown: false,
-      showNav: false,
-      menus: [
-        {
-          id: 'about',
-          name: 'About'
-        },
-        {
-          id: 'experience',
-          name: 'Experience'
-        },
-        {
-          id: 'project',
-          name: 'Project'
-        },
-        {
-          id: 'contact',
-          name: 'Contact'
-        }
-      ]
+      showNav: false
     }
   },
   watch: {

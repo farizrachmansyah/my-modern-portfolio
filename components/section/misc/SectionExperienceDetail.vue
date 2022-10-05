@@ -13,12 +13,12 @@
         {{ item.title }}
       </h3>
       <p class="date mt-0 mb-24">
-        {{ item.date.start }} - {{ item.date.end }}
+        {{ item.date_start }} - {{ item.date_end }}
       </p>
 
-      <div v-if="item.activities">
+      <div v-if="item.jobdesk">
         <ul class="list-nostyle">
-          <li v-for="(act, j) in item.activities" :key="j" class="list-item">
+          <li v-for="(act, j) in item.jobdesk" :key="j" class="list-item">
             {{ act }}
           </li>
         </ul>

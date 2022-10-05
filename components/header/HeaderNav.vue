@@ -2,12 +2,12 @@
   <nav :class="{'nav-opened': isOpen}">
     <ul class="list-nostyle nav-wrapper">
       <li
-        v-for="(nav, i) in navData"
-        :key="i"
+        v-for="menu in menus"
+        :key="menu.sys.id"
         class="mr-12"
       >
-        <button class="btn nav-link pv-8 ph-12" @click.prevent="goToSection(nav.id)">
-          {{ nav.name }}
+        <button class="btn nav-link pv-8 ph-12" @click.prevent="goToSection(menu.fields.name)">
+          {{ menu.fields.name }}
         </button>
       </li>
       <li>
@@ -20,16 +20,21 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   props: {
-    navData: {
-      type: Array,
-      default: () => []
-    },
     isOpen: {
       type: Boolean,
       default: false
     }
+  },
+  computed: {
+    ...mapState({
+      menus: (state) => {
+        return state.cms.content.menu
+      }
+    })
   },
   methods: {
     goToSection (id) {
@@ -80,6 +85,7 @@ nav {
   background: none;
   font-family: $font_serif;
   font-size: 12px;
+  text-transform: capitalize;
   color: $primary;
 
   &:hover {
