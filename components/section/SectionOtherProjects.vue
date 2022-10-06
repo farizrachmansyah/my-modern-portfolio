@@ -4,28 +4,28 @@
       Other Noteworthy Projects
     </h2>
     <ul class="list-nostyle inner">
-      <li v-for="item in 6" :key="item">
-        <a href="#" class="inner-wrapper">
+      <li v-for="item in projects" :key="item.sys.id">
+        <a :href="item.fields.site_url" class="inner-wrapper">
           <div class="inner-head">
-            <a href="#" class="site">
+            <a :href="item.fields.site_url" class="site">
               <font-awesome-icon icon="fa-solid fa-up-right-from-square" />
             </a>
-            <a href="#" class="github">
+            <a :href="item.fields.repo_url" class="github">
               <font-awesome-icon icon="fa-regular fa-folder-open" />
             </a>
           </div>
           <div class="inner-body">
             <h3 class="title">
-              bblblb
+              {{ item.fields.title }}
             </h3>
             <p class="desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, quod. Ex veritatis eaque repellendus voluptatum.
+              {{ item.fields.desc }}
             </p>
           </div>
           <ul class="list-nostyle inner-foot">
-            <li>tool 1</li>
-            <li>tool 2</li>
-            <li>tool 3</li>
+            <li v-for="tool in item.fields.tools" :key="tool">
+              {{ tool }}
+            </li>
           </ul>
         </a>
       </li>
@@ -34,8 +34,16 @@
 </template>
 
 <script>
-export default {
+import { mapState } from 'vuex'
 
+export default {
+  computed: {
+    ...mapState({
+      projects: (state) => {
+        return state.cms.content.projects.filter(item => !item.fields.is_featured)
+      }
+    })
+  }
 }
 </script>
 
@@ -53,6 +61,7 @@ export default {
 
   &-wrapper {
     display: inline-block;
+    width: 100%;
     padding: 18px 16px;
     border-radius: 4px;
     background-color: #131313;
@@ -89,6 +98,14 @@ export default {
     .site {
       font-size: 24px;
       color: $red;
+
+      &::after, &::before {
+        all: unset;
+      }
+
+      &:hover {
+        color: $red;
+      }
 
       @media #{$large} {
         font-size: 40px;

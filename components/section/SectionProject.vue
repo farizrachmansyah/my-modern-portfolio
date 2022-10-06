@@ -5,7 +5,7 @@
       <ul class="list-nostyle">
         <li v-for="(item, i) in projects" :key="i" :class="['project-item', (i+1)%2 === 0 ? 'even' : '']">
           <div class="project-item-image">
-            <img :src="item.image" :alt="`${item.overview.project_title} Overview`">
+            <img :src="item.image.fields.file.url" :alt="item.image.fields.title" loading="lazy">
           </div>
           <SectionProjectOverview :overview="item.overview" :is-even="(i+1)%2 === 0" />
         </li>
@@ -15,104 +15,34 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  data () {
-    return {
-      projects: [
-        {
-          image: 'assets/img-tes.png',
-          overview: {
-            project_title: 'Scrapesi',
-            project_desc: 'Web Scraping implementation using Puppeteer and Nuxt on web-based job portal system.',
-            project_tools: [
-              {
-                name: 'Nuxt.js'
-              },
-              {
-                name: 'Vuex'
-              },
-              {
-                name: 'Puppeteer.js'
-              },
-              {
-                name: 'VS Code'
-              }
-            ],
-            project_sources: [
-              {
-                name: 'Github',
-                url: 'https://github.com/farizrachmansyah/scrapesi'
-              },
-              {
-                name: 'Site',
-                url: 'https://scrapesi.herokuapp.com'
-              }
-            ]
-          }
-        },
-        {
-          image: 'assets/img-tes.png',
-          overview: {
-            project_title: 'Scrapesi',
-            project_desc: 'Web Scraping implementation using Puppeteer and Nuxt on web-based job portal system.',
-            project_tools: [
-              {
-                name: 'Nuxt.js'
-              },
-              {
-                name: 'Vuex'
-              },
-              {
-                name: 'Puppeteer.js'
-              },
-              {
-                name: 'VS Code'
-              }
-            ],
-            project_sources: [
-              {
-                name: 'Github',
-                url: 'https://github.com/farizrachmansyah/scrapesi'
-              },
-              {
-                name: 'Site',
-                url: 'https://scrapesi.herokuapp.com'
-              }
-            ]
-          }
-        },
-        {
-          image: 'assets/img-tes.png',
-          overview: {
-            project_title: 'Scrapesi',
-            project_desc: 'Web Scraping implementation using Puppeteer and Nuxt on web-based job portal system.',
-            project_tools: [
-              {
-                name: 'Nuxt.js'
-              },
-              {
-                name: 'Vuex'
-              },
-              {
-                name: 'Puppeteer.js'
-              },
-              {
-                name: 'VS Code'
-              }
-            ],
-            project_sources: [
-              {
-                name: 'Github',
-                url: 'https://github.com/farizrachmansyah/scrapesi'
-              },
-              {
-                name: 'Site',
-                url: 'https://scrapesi.herokuapp.com'
-              }
-            ]
-          }
+  computed: {
+    ...mapState({
+      projectData: (state) => {
+        return state.cms.content.projects.filter(item => item.fields.is_featured)
+      }
+    }),
+    projects () {
+      return this.projectData.map((item) => {
+        const projectObj = {
+          image: item.fields.image,
+          overview: this.getOverview(item.fields)
         }
-      ]
+        return projectObj
+      })
+    }
+  },
+  methods: {
+    getOverview (fields) {
+      const overviewObj = {}
+      for (const prop in fields) {
+        if (prop !== 'image') {
+          overviewObj[prop] = fields[prop]
+        }
+      }
+      return overviewObj
     }
   }
 }

@@ -40,6 +40,10 @@ export const actions = {
         client.getEntries({
           content_type: 'experience',
           order: 'sys.createdAt'
+        }),
+        client.getEntries({
+          content_type: 'projects',
+          order: 'sys.createdAt'
         })
       ]).then((responses) => {
         responses.forEach((res) => {

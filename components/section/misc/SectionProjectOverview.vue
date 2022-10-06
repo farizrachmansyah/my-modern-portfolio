@@ -4,24 +4,25 @@
       Featured Project
     </p>
     <h3 class="project-overview-title mt-0 mb-20">
-      {{ overview.project_title }}
+      {{ overview.title }}
     </h3>
     <div class="project-overview-desc">
       <p class="m-0 text-left">
-        {{ overview.project_desc }}
+        {{ overview.desc }}
       </p>
     </div>
     <ul class="list-nostyle project-overview-tools flex mv-20">
-      <li v-for="(tool, i) in overview.project_tools" :key="i">
-        {{ tool.name }}
+      <li v-for="(tool, i) in overview.tools" :key="i">
+        {{ tool }}
       </li>
     </ul>
     <div class="project-overview-links">
-      <div v-for="(source, i) in overview.project_sources" :key="i">
-        <a :href="source.url" target="_blank">
-          <font-awesome-icon :icon="source.name === 'Github' ? 'fa-regular fa-folder-open' : 'fa-solid fa-up-right-from-square'" />
-        </a>
-      </div>
+      <a :href="overview.repo_url" target="_blank">
+        <font-awesome-icon icon="fa-regular fa-folder-open" />
+      </a>
+      <a :href="overview.site_url" target="_blank">
+        <font-awesome-icon icon="fa-solid fa-up-right-from-square" />
+      </a>
     </div>
   </div>
 </template>
@@ -153,7 +154,6 @@ export default {
 
       &:hover {
         color: $red;
-        transform: translateY(-10%);
       }
     }
   }
