@@ -36,34 +36,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    proxy: true,
-    baseURL: process.env.BASE_URL,
-    withCredentials: false,
-    retry: true,
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    }
-  },
-
-  proxy: {
-    '/api': {
-      target: process.env.ADMIN_URL,
-      pathRewrite: { '^/api/': '' },
-      changeOrigin: true,
-      onProxyReq (request) {
-        request.setHeader('origin', process.env.ADMIN_URL)
-      }
-    }
-  },
+  modules: [],
 
   styleResources: {
     scss: ['./assets/scss/partials/_variables.scss']

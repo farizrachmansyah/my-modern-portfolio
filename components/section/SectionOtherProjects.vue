@@ -80,7 +80,7 @@ export default {
       transform: translateY(-2%);
       box-shadow: 0 20px 30px -15px #760a00;
 
-      .other-projects-body .title {
+      .inner-body .title {
         color: $red;
       }
     }
@@ -138,7 +138,7 @@ export default {
       font-size: 14px;
 
       @media #{$large} {
-        font-size: 16px;
+        font-size: inherit;
       }
     }
   }
@@ -146,9 +146,10 @@ export default {
   &-foot {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 20px;
     font-family: $font_serif;
-    gap: 0 16px;
+    gap: 8px 16px;
     font-size: 10px;
 
     @media #{$large} {

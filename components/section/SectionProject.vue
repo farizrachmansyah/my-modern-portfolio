@@ -68,7 +68,7 @@ export default {
   &-image {
     display: none;
     position: relative;
-    width: 60%;
+    width: 65%;
     box-shadow: 0 10px 30px -10px #760a00;
     border-radius: 4px;
     overflow: hidden;
