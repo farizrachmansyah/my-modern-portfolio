@@ -77,11 +77,15 @@ export default {
   },
   methods: {
     configDate (date) {
-      const realDate = new Date(date)
-      return realDate.toLocaleString('en-US', {
-        year: 'numeric',
-        month: 'short'
-      })
+      if (date) {
+        const realDate = new Date(date)
+        return realDate.toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'short'
+        })
+      } else {
+        return null
+      }
     },
     setActive (company) {
       return company === this.active ? 'active' : ''
