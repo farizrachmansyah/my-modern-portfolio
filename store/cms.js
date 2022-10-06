@@ -44,10 +44,14 @@ export const actions = {
         client.getEntries({
           content_type: 'projects',
           order: 'sys.createdAt'
-        })
+        }),
+        client.getAsset(process.env.CONTENTFUL_RESUME_ID)
       ]).then((responses) => {
         responses.forEach((res) => {
-          if (res.items.length) {
+          if (res.sys.type === 'Asset') {
+            const contentType = 'resume'
+            commit('UPDATE_CONTENT', ({ contentType, items: res }))
+          } else if (res.items.length) {
             const contentType = res.items[0].sys.contentType.sys.id
             commit('UPDATE_CONTENT', ({ contentType, items: res.items }))
           }
