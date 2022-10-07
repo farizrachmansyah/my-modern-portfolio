@@ -5,12 +5,12 @@
     </h2>
     <ul class="list-nostyle inner">
       <li v-for="item in projects" :key="item.sys.id">
-        <a :href="item.fields.site_url" class="inner-wrapper">
+        <a :href="item.fields.site_url" target="_blank" class="inner-wrapper">
           <div class="inner-head">
-            <a :href="item.fields.site_url" class="site">
+            <a :href="item.fields.site_url" target="_blank" class="site">
               <font-awesome-icon icon="fa-solid fa-up-right-from-square" />
             </a>
-            <a :href="item.fields.repo_url" class="github">
+            <a :href="item.fields.repo_url" target="_blank" class="github">
               <font-awesome-icon icon="fa-regular fa-folder-open" />
             </a>
           </div>
