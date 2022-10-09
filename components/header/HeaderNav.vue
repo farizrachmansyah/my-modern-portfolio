@@ -6,7 +6,7 @@
         :key="menu.sys.id"
         class="mr-12"
       >
-        <button class="btn nav-link pv-8 ph-12" @click.prevent="goToSection(menu.fields.name)">
+        <button class="btn nav-link pv-8 ph-12" @click.prevent="$nuxt.$emit('goToNavSection', menu.fields.name)">
           {{ menu.fields.name }}
         </button>
       </li>
@@ -40,9 +40,6 @@ export default {
     })
   },
   methods: {
-    goToSection (id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
-    },
     async downloadResume () {
       const blob = await fetch(this.resume.fields.file.url).then(res => res.blob())
       const link = document.createElement('a')

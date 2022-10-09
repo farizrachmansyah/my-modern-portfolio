@@ -72,6 +72,11 @@ export default {
       }
     }
   },
+  created () {
+    this.$nuxt.$on('goToNavSection', (id) => {
+      this.goToNavSection(id)
+    })
+  },
   mounted () {
     let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop
     window.addEventListener('scroll', () => {
@@ -90,6 +95,18 @@ export default {
       }
       lastScrollTop = currScrollTop
     })
+  },
+  methods: {
+    goToNavSection (id) {
+      if (this.showNav) {
+        this.showNav = false
+        setTimeout(() => {
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+        }, 300)
+      } else {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+      }
+    }
   }
 }
 </script>
@@ -102,7 +119,7 @@ export default {
   z-index: 3;
   width: 100%;
   height: 70px;
-  background: transparent;
+  background-color: $black;
   transition: all 0.3s ease-out;
 
   @media #{$medium} {
@@ -112,9 +129,7 @@ export default {
   &.scroll-up {
     height: 70px;
     transform: none;
-    background-color: rgba(19, 19, 19, 0.85);
     box-shadow: 0 10px 30px -15px #760a00;
-    backdrop-filter: blur(12px);
   }
   &.scroll-down {
     transform: translate3d(0, -100%, 0);
