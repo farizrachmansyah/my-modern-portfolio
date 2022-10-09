@@ -46,6 +46,10 @@ export default {
 .project-overview {
   position: relative;
   z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   padding: 30px;
 
   &::before {
@@ -71,11 +75,14 @@ export default {
   @media #{$medium} {
     position: absolute;
     z-index: unset;
-    padding: 0;
+    left: unset;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    width: unset;
+    height: unset;
     max-width: 495px;
+    padding: 0;
     text-align: right;
   }
 

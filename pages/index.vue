@@ -158,7 +158,7 @@ export default {
 
     a::before,
     a::after {
-      background-color: $primary;
+      background-color: $secondary;
     }
   }
 

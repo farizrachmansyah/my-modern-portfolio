@@ -11,7 +11,7 @@
         </button>
       </li>
       <li>
-        <button class="btn--ghost-red" @click.prevent="downloadResume()">
+        <button class="btn--ghost-red" title="Download Resume" @click.prevent="downloadResume()">
           Resume
         </button>
       </li>
