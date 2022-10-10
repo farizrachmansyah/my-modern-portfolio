@@ -13,8 +13,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: "Fariz's Portfolio" },
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'og:url', property: 'og:url', content: '/' },
+      { hid: 'og:title', property: 'og:title', content: 'Fariz Rachmansyah' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Fariz Rachmansyah' },
+      { hid: 'og:description', property: 'og:description', content: "Fariz's Portfolio" },
+      { hid: 'og:image', property: 'og:image', content: '/favicon.png' },
+      { hid: 'og:type', property: 'og:type', content: 'website' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },

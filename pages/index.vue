@@ -154,7 +154,6 @@ export default {
     max-width: 600px;
     margin-top: 20px;
     font-size: clamp(16px, 4vw, 20px);
-    // font-size: 20px;
 
     a::before,
     a::after {
