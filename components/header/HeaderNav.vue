@@ -11,7 +11,7 @@
         </button>
       </li>
       <li>
-        <button class="btn--ghost-red" title="Download Resume">
+        <button class="btn--ghost-red" title="Download Resume" @click.prevent="downloadResume()">
           Resume
         </button>
       </li>
@@ -40,13 +40,13 @@ export default {
     })
   },
   methods: {
-    // async downloadResume () {
-    //   const blob = await fetch(this.resume.fields.file.url).then(res => res.blob())
-    //   const link = document.createElement('a')
-    //   link.href = URL.createObjectURL(blob)
-    //   link.download = this.resume.fields.file.fileName
-    //   link.click()
-    // }
+    async downloadResume () {
+      const blob = await fetch(this.resume.fields.file.url).then(res => res.blob())
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = this.resume.fields.file.fileName
+      link.click()
+    }
   }
 }
 </script>
